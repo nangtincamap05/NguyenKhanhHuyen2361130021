@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NguyenKhanhHuyen2361130021</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        freshblue: '#0084ff',
+                        skyaccent: '#38bdf8',
+                        lightbg: '#f0f9ff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Social & Tech Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            color: #1e293b;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism light card styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.15);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        /* Glowing aura effect for avatar */
+        .glow-avatar {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.35), inset 0 0 15px rgba(56, 189, 248, 0.2);
+            animation: pulseGlow 4s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 35px rgba(56, 189, 248, 0.6), inset 0 0 20px rgba(14, 165, 233, 0.4);
+            }
+        }
+
+        /* Floating winter snowflakes or bubbles background effect */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: -1;
+            color: rgba(56, 189, 248, 0.4);
+            animation: fall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(110vh) translateX(20px) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        /* Smooth tab transition */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f0f9ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7dd3fc;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between selection:bg-sky-400 selection:text-white">
+
+    <!-- Floating Background Snowflakes / Bubbles for Winter & Fresh Vibe -->
+    <div class="snowflake" style="left: 10%; font-size: 16px; animation-duration: 9s; animation-delay: 0s;"><i class="fa-solid fa-snowflake"></i></div>
+    <div class="snowflake" style="left: 25%; font-size: 12px; animation-duration: 12s; animation-delay: 2s;"><i class="fa-solid fa-circle"></i></div>
+    <div class="snowflake" style="left: 45%; font-size: 20px; animation-duration: 8s; animation-delay: 1s;"><i class="fa-solid fa-snowflake"></i></div>
+    <div class="snowflake" style="left: 65%; font-size: 14px; animation-duration: 11s; animation-delay: 3s;"><i class="fa-solid fa-snowflake"></i></div>
+    <div class="snowflake" style="left: 85%; font-size: 18px; animation-duration: 10s; animation-delay: 1.5s;"><i class="fa-solid fa-circle"></i></div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-lg bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-sky-500"></i> Hồ sơ Nguyễn Khánh Huyền
+            </a>
+            <div class="flex items-center gap-3">
+                <button onclick="copyProfileLink()" class="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-sky-100 hover:bg-sky-200 transition text-sky-700 flex items-center gap-1.5 border border-sky-300 shadow-sm">
+                    <i class="fa-solid fa-share-nodes text-sky-500"></i> Chia sẻ
+                </button>
+               
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-3xl w-full mx-auto px-4 sm:px-6 pt-28 pb-16">
+        
+        <!-- Profile Card Header -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden mb-6">
+            <!-- University & Faculty Badge -->
+            
+
+            <!-- Avatar with Light Blue Glowing Aura -->
+            <!-- Thay thế đoạn icon cũ bằng thẻ img của bạn -->
+<div class="relative inline-block mb-4">
+    <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-400 to-blue-600 rounded-full blur-md opacity-75 animate-pulse"></div>
+    
+    <!-- ĐOẠN CODE THÊM ẢNH CỦA BẠN -->
+    <img src="avt.jpg" alt="Nguyễn Khánh Huyền" class="relative w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl">
+</div>
+
+            <!-- Name and Major -->
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-2 flex items-center justify-center gap-2">
+                Nguyễn Khánh Huyền <i class="fa-solid fa-circle-check text-sky-500 text-lg"></i>
+            </h1>
+            <p class="text-sky-700 font-semibold text-sm sm:text-base mb-4 bg-sky-100 border border-sky-200 py-1 px-4 rounded-full inline-block shadow-sm">
+                Sư Phạm Tin Học • Khoa Kỹ Thuật - Công Nghệ
+            </p>
+
+            <!-- Bio / Introduction -->
+            <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
+                Xin chào! Mình là Huyền, sinh viên ngành Sư phạm Tin học, khoa Kỹ thuật - Công nghệ tại Trường Đại học Hồng Đức. Tôi yêu công nghệ, thích truyền đạt tri thức và tận hưởng những khoảnh khắc tuyệt vời trong cuộc sống.
+            </p>
+
+            <!-- Clickable Social Media Links -->
+            <div class="mb-2">
+                <p class="text-xs font-bold text-sky-900 uppercase tracking-widest mb-4">Kết nối với Huyền qua mạng xã hội</p>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <!-- Facebook -->
+                    <a href="https://web.facebook.com/share/1HkCneq9wC/?mibextid=wwXIfr&_rdc=1&_rdr" target="_blank" rel="noopener noreferrer" 
+                       class="group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white hover:bg-[#1877F2] border border-sky-200 hover:border-[#1877F2] transition-all duration-300 text-slate-700 hover:text-white shadow-md hover:-translate-y-1">
+                        <div class="w-8 h-8 rounded-xl bg-[#1877F2]/10 group-hover:bg-white/20 flex items-center justify-center text-[#1877F2] group-hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold">Facebook</span>
+                    </a>
+
+                    
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@iamdomdomm?_r=1&_t=ZS-9A6UOO2zG2X" target="_blank" rel="noopener noreferrer" 
+                       class="group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white hover:bg-slate-900 border border-sky-200 hover:border-slate-900 transition-all duration-300 text-slate-700 hover:text-white shadow-md hover:-translate-y-1">
+                        <div class="w-8 h-8 rounded-xl bg-slate-900/10 group-hover:bg-white/20 flex items-center justify-center text-slate-900 group-hover:text-white transition-all">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold">TikTok</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/nangtincamap.02?stkn=eWt2eWsyMzR5cDBu&utm_source=qr" target="_blank" rel="noopener noreferrer" 
+                       class="group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white hover:bg-[#E4405F] border border-sky-200 hover:border-[#E4405F] transition-all duration-300 text-slate-700 hover:text-white shadow-md hover:-translate-y-1">
+                        <div class="w-8 h-8 rounded-xl bg-[#E4405F]/10 group-hover:bg-white/20 flex items-center justify-center text-[#E4405F] group-hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold">Instagram</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="https://mail.google.com/mail/u/0/?hl=en#inbox" 
+                       class="group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white hover:bg-sky-600 border border-sky-200 hover:border-sky-600 transition-all duration-300 text-slate-700 hover:text-white shadow-md hover:-translate-y-1">
+                        <div class="w-8 h-8 rounded-xl bg-sky-500/10 group-hover:bg-white/20 flex items-center justify-center text-sky-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-envelope text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold">Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Tabs Card -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl">
+            <!-- Tab Navigation Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 rounded-2xl bg-sky-100/80 p-1.5 border border-sky-200 mb-6">
+                <button onclick="switchTab('hobbies')" id="btn-hobbies" class="py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-white bg-sky-500 shadow-md">
+                    <i class="fa-solid fa-heart mr-1.5"></i> Sở thích
+                </button>
+                <button onclick="switchTab('education')" id="btn-education" class="py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-sky-800 hover:text-sky-900">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Học tập
+                </button>
+                <button onclick="switchTab('survey')" id="btn-survey" class="py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-sky-800 hover:text-sky-900">
+                    <i class="fa-solid fa-gamepad mr-1.5"></i> Khảo sát một chút
+                </button>
+                <button onclick="switchTab('contact')" id="btn-contact" class="py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-sky-800 hover:text-sky-900">
+                    <i class="fa-solid fa-paper-plane mr-1.5"></i> Nhắn tin
+                </button>
+            </div>
+
+            <!-- Tab 1: Hobbies (Sở thích cá nhân) -->
+            <div id="tab-hobbies" class="tab-content active">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-star text-sky-500"></i> Sở thích & Đam mê của Huyền
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Hobby 1: Thích đi chơi -->
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl group-hover:bg-sky-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-sm">Thích Đi Chơi</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Khám phá địa điểm mới và check-in cùng bạn bè.</p>
+                    </div>
+
+                    <!-- Hobby 2: Thích ngủ -->
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-sm">Thích Ngủ</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Nạp đầy năng lượng sau những giờ học căng thẳng.</p>
+                    </div>
+
+                    <!-- Hobby 3: Thích mùa đông -->
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-sm">Thích Mùa Đông</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Yêu cái lạnh se sắt và không khí ấm áp ngọt ngào.</p>
+                    </div>
+
+                    <!-- Hobby 4: Thích màu xanh -->
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition text-center group">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-sm">Thích Màu Xanh dương</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Màu xanh dương tươi mát mang lại cảm giác bình yên.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Education (Học tập & Sư phạm Tin học) -->
+            <div id="tab-education" class="tab-content">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code text-sky-500"></i> Chuyên ngành & Kỹ năng
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 flex items-start gap-4 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">Sư Phạm Tin Học</h4>
+                            <p class="text-xs text-sky-700 font-medium mb-1">Khoa Kỹ thuật - Công nghệ • Đại học Hồng Đức</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Đang theo đuổi ước mơ trở thành giáo viên tin học, truyền cảm hứng lập trình và tin học cho các thế hệ học sinh và mở trung tâm học IT tại nhà.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-white border border-sky-100 flex items-start gap-4 shadow-sm">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">Kỹ năng công nghệ</h4>
+                            <p class="text-xs text-blue-700 font-medium mb-1">Lập trình & Tin học ứng dụng</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Thành thạo các kỹ năng tin học văn phòng, lập trình cơ bản, thiết kế bài giảng điện tử và ứng dụng công nghệ trong giáo dục.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Interactive Survey / Mini Quiz (Làm quen 1 chút) -->
+            <div id="tab-survey" class="tab-content">
+                <h3 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-face-laugh-wink text-sky-500"></i> Khảo sát nhanh cùng Khánh Huyền
+                </h3>
+                <p class="text-xs text-slate-500 mb-6">Hãy chọn các đáp án dưới đây xem bạn có "hợp cạ" với Huyền không nhé!</p>
+
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="p-5 rounded-2xl bg-white border border-sky-100 shadow-sm">
+                        <p class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs">1</span>
+                            Bạn là nam hay nữ?
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                            <label class="cursor-pointer flex items-center gap-2.5 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="radio" name="q1" value="male" onchange="handleSurveyAnswer(1, 'ok')" class="text-sky-500 focus:ring-sky-400">
+                                Nam
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2.5 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="radio" name="q1" value="female" onchange="handleSurveyAnswer(1, 'ok')" class="text-sky-500 focus:ring-sky-400">
+                                Nữ
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2.5 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="radio" name="q1" value="no" onchange="handleSurveyAnswer(1, 'Tôi hiểu!')" class="text-sky-500 focus:ring-sky-400">
+                                Không thể tiết lộ
+                            </label>
+                        
+                        </div>
+                        <div id="result-q1" class="mt-3 text-xs font-semibold text-sky-600 hidden animate-pulse"></div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="p-5 rounded-2xl bg-white border border-sky-100 shadow-sm">
+                        <p class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs">2</span>
+                            Nếu được chơi cùng, bạn muốn chơi cùng tôi trò gì?
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="checkbox" name="q2" value="hide" onchange="handleSurveyAnswer(2, 'Trốn tìm á? Đảm bảo Huyền tìm ra ngay! 🕵️‍♀️')" class="text-sky-500 focus:ring-sky-400">
+                                Đi trốn
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="checkbox" name="q2" value="game" onchange="handleSurveyAnswer(2, 'Cày game xuyên màn đêm luôn! 🎮')" class="text-sky-500 focus:ring-sky-400">
+                                Cày game
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="checkbox" name="q2" value="sleep" onchange="handleSurveyAnswer(2, 'Chuẩn luôn, bộ môn ngủ đông là chân ái! 😴')" class="text-sky-500 focus:ring-sky-400">
+                                Ngủ đông
+                            </label>
+                            <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl border border-sky-100 bg-sky-50/50 hover:bg-sky-100/60 transition font-medium text-xs text-slate-700">
+                                <input type="checkbox" name="q2" value="food" onchange="handleSurveyAnswer(2, 'Đi ăn vặt khắp phố Thanh Hóa nào! 🧋')" class="text-sky-500 focus:ring-sky-400">
+                                Đi ăn vặt
+                            </label>
+                        </div>
+                        <div id="result-q2" class="mt-3 text-xs font-semibold text-sky-600 hidden animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Contact (Gửi lời nhắn) -->
+            <div id="tab-contact" class="tab-content">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-sky-500"></i> Gửi lời nhắn cho Khánh Huyền
+                </h3>
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Họ và tên của bạn</label>
+                            <input type="text" required placeholder="Nhập tên..." 
+                                   class="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-slate-800 text-sm focus:outline-none focus:border-sky-500 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Email hoặc SĐT</label>
+                            <input type="text" required placeholder="Email / Số điện thoại..." 
+                                   class="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-slate-800 text-sm focus:outline-none focus:border-sky-500 shadow-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nội dung lời nhắn</label>
+                        <textarea rows="3" required placeholder="Gửi lời nhắn hoặc trò chuyện với Huyền..." 
+                                  class="w-full px-4 py-2.5 rounded-xl bg-white border border-sky-200 text-slate-800 text-sm focus:outline-none focus:border-sky-500 shadow-sm resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white text-sm font-bold transition shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi tin nhắn ngay
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-sky-800 border-t border-sky-200/60 bg-white/40 backdrop-blur-sm">
+        <p>© 2026 Nguyễn Khánh Huyền • Khoa Kỹ Thuật - Công Nghệ, Đại học Hồng Đức.</p>
+    </footer>
+
+    <!-- Notification Toast Popup -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-white border border-sky-300 text-slate-800 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3">
+        <div class="w-7 h-7 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center">
+            <i class="fa-solid fa-check text-xs"></i>
+        </div>
+        <div class="text-xs">
+            <p class="font-bold text-slate-900" id="toast-title">Thành công</p>
+            <p class="text-slate-600" id="toast-desc">Đã sao chép liên kết!</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching function
+        function switchTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('[id^="btn-"]');
+            buttons.forEach(b => {
+                b.className = "py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-sky-800 hover:text-sky-900";
+            });
+
+            document.getElementById('tab-' + tabName).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + tabName);
+            activeBtn.className = "py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300 text-white bg-sky-500 shadow-md";
+        }
+
+        // Survey interactive handler
+        function handleSurveyAnswer(questionNo, message) {
+            const resultBox = document.getElementById('result-q' + questionNo);
+            resultBox.innerText = "✨ Phản hồi: " + message;
+            resultBox.classList.remove('hidden');
+            
+            // Show short toast feedback
+            showToast("Đã ghi nhận!", message);
+        }
+
+        // Copy profile link toast action
+        function copyProfileLink() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast("Đã sao chép!", "Liên kết trang cá nhân của Khánh Huyền đã được lưu!");
+        }
+
+        // Handle contact form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            showToast("Gửi thành công!", "Cảm ơn bạn đã nhắn tin cho Huyền. Huyền sẽ phản hồi sớm nhé!");
+            event.target.reset();
+        }
+
+        // Toast notification helper
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
